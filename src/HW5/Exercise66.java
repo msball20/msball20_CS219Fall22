@@ -3,20 +3,23 @@ package HW5;
 public class Exercise66 {
 
     public static boolean canSpell(String word, String tiles) {
+
+        int count = 0;
         for (int i = 0; i < word.length(); i++) {
-            int z = 0;
-            for (z = 0; z < tiles.length(); z++) {
+
+            for (int z = 0; z < tiles.length(); z++) {
                 if (word.charAt(i) == tiles.charAt(z)) {
-                    tiles = tiles.substring(0, z) + tiles.substring(z + 1);
+                    tiles = tiles.substring(0,z) + tiles.substring(z+1);
+                    count++;
                     break;
                 }
             }
-            if (z == tiles.length()+1) {
-                return false;
+            if (count == word.length()) {
+                return true;
             }
 
         }
-        return true;
+        return false;
     }
 
 
