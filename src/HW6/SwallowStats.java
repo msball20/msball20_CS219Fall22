@@ -26,9 +26,10 @@ public class SwallowStats {
         double sum = 0.0;
         int count = 0;
 
-        // read each line of the web file
+        // declare the min and max outside of the while loop
         double min = Double.POSITIVE_INFINITY;
         double max = Double.NEGATIVE_INFINITY;
+        // read each line of the web file
         while (true) {
 
             if (!s.hasNextLine())
@@ -44,6 +45,7 @@ public class SwallowStats {
             if (line.indexOf("#") == -1) {   // modify condition
                 sum = sum + Double.parseDouble(line);
                 count++;
+                // redeclare the min and max
                 if(Double.parseDouble(line) < min){
                     min = Double.parseDouble(line);
                 }
